@@ -163,10 +163,7 @@ if sys.platform.startswith('darwin') and is_clang(os.getenv('CXX')):
 #     # extra_compile_args.append('-stdlib=libstdc++')
 
 
-if not compile_c_extension:
-    ext_modules = []
-else:
-    ext_modules = get_ext_modules(
+ext_modules = get_ext_modules(
         cpptraj_info=cpptraj_info,
         pytraj_src=pytraj_src,
         compile_c_extension=compile_c_extension,
